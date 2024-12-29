@@ -22,13 +22,13 @@ To run this bot, you need the following:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/telegram-qr-barcode-bot.git
+   git clone https://github.com/theycallmerubik/bar-QR-code-bot.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd telegram-qr-barcode-bot
+   cd bar-QR-code-bot
    ```
 
 3. Install the required dependencies:
