@@ -1,3 +1,4 @@
+![t.me/Ru_Bic](src/Ru_Bic.png)
 
 # Telegram QR Code & Barcode Generator Bot
 
