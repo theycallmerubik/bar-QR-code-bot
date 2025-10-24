@@ -1,13 +1,34 @@
 const TelegramBot = require('node-telegram-bot-api');
 const bwipjs    =    require('bwip-js');
+const express = require('express');
 const QRCode = require('qrcode');
 const path = require('path');
 require('dotenv').config();
 const fs = require('fs');
 
-const token = process.env.TELEGRAM_TOKEN;
+const TOKEN = process.env.TELEGRAM_TOKEN;
+const PORT = process.env.PORT || 3000;
+const webhookurl = process.env.WEBHOOK_URL;
 
-const bot = new TelegramBot(token, { polling: true });
+const app = express();
+const bot = new TelegramBot(TOKEN);
+
+bot.setWebHook(`${webhookurl}/bot${TOKEN}`);
+
+app.use(express.json());
+
+app.post(`/bot${TOKEN}`, (req, res) => {
+  bot.processUpdate(req.body);
+  res.sendStatus(200);
+});
+
+app.get('/bot', (req, res) => {
+  res.send('Bot is running!');
+});
+
+app.listen(PORT, () => {
+  console.log(`Bot is live on port ${PORT}`);
+});
 
 const userChoices = {};
 const inputMessages = {};
