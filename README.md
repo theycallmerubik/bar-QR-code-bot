@@ -42,9 +42,12 @@ To run this bot, you need the following:
 
    ```text
    TELEGRAM_TOKEN=your-telegram-bot-token
+   WEBHOOK_URL=your-project's-domain
+   PORT=your-port(if-you want-to-specify-qny)
    ```
 
-   Replace `your-telegram-bot-token` with your actual bot token from BotFather.
+   Replace `your-telegram-bot-token` and `your-project's-domain` with your actual bot token from BotFather and domain aquired from your dashboard.
+   (optional)replace `your-port` with the port you want to replace from the default 3000 used. 
 
 ## Usage
 
